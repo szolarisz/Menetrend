@@ -1,20 +1,12 @@
 const mysql = require('mysql');
-const fs = require('fs');
-const path = require('path');
-
- fs.readFile(path.join(__dirname,"../config/configDB.json"), (err, data) =>{
-    if(err) throw err;
-    const config = JSON.parse(data);
-    console.log(config[0])
-})
-
+const config = require('../config/configDB.json');
 
 const connection = mysql.createConnection({
-    host: "localhost", //Ezt majd kívülről vesszük
-    port: "3306", //Ezt majd kívülről vesszük
-    database: "menetrend", //Ezt majd kívülről vesszük
-    user: "menetrend", //Ezt majd kívülről vesszük
-    password: "menetrend" //Ezt majd kívülről vesszük
+    host: config.host, 
+    port: config.port, 
+    database: config.database, 
+    user: config.user, 
+    password: config.password
 });
 
 module.exports.vonatLista = function (vId) {
