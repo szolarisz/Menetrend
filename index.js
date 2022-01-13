@@ -11,7 +11,7 @@ app.set('view engine', 'ejs');
 // = require(
 
 app.get('/', (req,res) =>{
-
+    res.
 });
 
 app.get('/vonatok', (req,res) =>{

@@ -1,4 +1,13 @@
 const mysql = require('mysql');
+const fs = require('fs');
+const path = require('path');
+
+ fs.readFile(path.join(__dirname,"../config/configDB.json"), (err, data) =>{
+    if(err) throw err;
+    const config = JSON.parse(data);
+    console.log(config[0])
+})
+
 
 const connection = mysql.createConnection({
     host: "localhost", //Ezt majd kívülről vesszük
@@ -15,3 +24,4 @@ module.exports.vonatLista = function (vId) {
                 return JSON.parse(JSON.stringify(result));
             })
         }
+       
