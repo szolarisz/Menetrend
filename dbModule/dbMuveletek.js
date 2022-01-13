@@ -17,17 +17,6 @@ module.exports.vonatEsemenyLista = function (vId) {
     })
 }
 
-/*
-module.exports.vonatLista = function () {
-    myQuery = `SELECT vId, vNev FROM vonat`;
-    connection.query(myQuery, async (err, result, fields) => {
-        if (err) throw err;
-        console.log(JSON.parse(JSON.stringify(result)))
-        return await Promise.all(JSON.parse(JSON.stringify(result)));
-    })
-}
-*/
-
 module.exports.vonatLista = function (callback) {
     myQuery = `SELECT vId, vNev FROM vonat`;
     connection.query(myQuery, (err, result, fields) => {
