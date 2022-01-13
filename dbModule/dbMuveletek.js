@@ -34,7 +34,6 @@ module.exports.vonatLista = function (callback) {
         if (err)
             callback(err, null);
         else {
-            console.log(JSON.parse(JSON.stringify(result)))
             callback(null, JSON.parse(JSON.stringify(result)));
         }
     })

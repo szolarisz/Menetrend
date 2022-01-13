@@ -19,7 +19,6 @@ app.get('/', (req,res) =>{
 app.get('/ejs', (req,res) =>{
     dbData.vonatLista( (err,data) =>{
         if (err) throw err;
-        console.log(data)
         res.render( "index", { vonatok : data});
     });
     
